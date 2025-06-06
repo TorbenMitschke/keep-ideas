@@ -59,6 +59,20 @@ def create_idea():
     
     return jsonify(new_idea.to_dict()), 201
 
+@app.route('/api/ideas/<int:idea_id>', methods=['PUT'])
+def update_idea(idea_id):
+    idea = Idea.query.get_or_404(idea_id)
+    data = request.get_json()
+
+    if not data or 'title' not in data:
+        return jsonify({'error': 'Title is required'}), 400
+
+    idea.title = data['title']
+    idea.description = data.get('description', idea.description)
+    db.session.commit()
+
+    return jsonify(idea.to_dict()), 200
+
 # Health check endpoint
 @app.route('/health', methods=['GET'])
 def health_check():
