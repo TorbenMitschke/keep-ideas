@@ -1,0 +1,159 @@
+/* Custom styles for Idea Keeper */
+
+body {
+    background: #2a003f;
+    color: #e6d6f7;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.navbar {
+    background: #ff3860;
+    color: #fff;
+    border-bottom: 3px solid #d90429;
+}
+
+.navbar-brand {
+    color: #7c1fff !important;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.card {
+    background: #3a0066;
+    border: none;
+    box-shadow: 0 2px 16px rgba(80, 0, 120, 0.2);
+}
+
+.card-header {
+    background: #3a0066;
+    color: #d6a4ff;
+    border-bottom: 1px solid #5e1a8a;
+    font-weight: 600;
+}
+
+.form-label {
+    color: #ff3860;
+}
+
+.form-control {
+    background: #2a003f;
+    color: #ff7a99;
+    border: 1px solid #5e1a8a;
+}
+
+.form-control:focus {
+    background: #2a003f;
+    color: #ff7a99;
+    border-color: #ff3860;
+    box-shadow: none;
+    outline: 2px solid #ff3860;
+}
+
+.btn-primary {
+    background: #ff3860;
+    border: none;
+    color: #7c1fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background: #d90429;
+    color: #7c1fff;
+}
+
+.btn-danger {
+    background: #ff3860;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+}
+
+.btn-danger:hover, .btn-danger:focus {
+    background: #d90429;
+    color: #fff;
+}
+
+.idea-item {
+    background: #3a0066;
+    border: 1px solid #5e1a8a;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.idea-item:hover,
+.idea-item:focus {
+    background: #3a0066 !important;
+    border-color: #ff3860;
+    box-shadow: none;
+    outline: 2px solid #ff3860;
+}
+
+.idea-title {
+    color: #ff3860;
+    font-weight: 600;
+}
+
+.idea-description {
+    color: #e6d6f7;
+}
+
+.idea-date {
+    color: #ff3860;
+    font-size: 0.9em;
+}
+
+.alert-danger {
+    background: #2d112b;
+    color: #ff3860;
+    border: 1px solid #ff3860;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: #3a0066;
+}
+::-webkit-scrollbar-thumb {
+    background: #7c1fff;
+    border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    .card {
+        margin: 0;
+    }
+}
+
+.list-group-item {
+    border-left: none;
+    border-right: none;
+    padding: 1rem;
+}
+
+.list-group-item:first-child {
+    border-top: none;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+/* Form styles */
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
+}
+
+/* Button hover effect */
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+} 
