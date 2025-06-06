@@ -4,6 +4,7 @@ const API_URL = 'http://localhost:5001/api';
 // DOM Elements
 const ideaForm = document.getElementById('ideaForm');
 const ideasList = document.getElementById('ideasList');
+const cancelEditBtn = document.getElementById('cancelEditBtn');
 
 let editMode = false;
 let editIdeaId = null;
@@ -51,6 +52,7 @@ ideasList.addEventListener('click', function(e) {
             editIdeaId = idea.id;
             ideaForm.querySelector('button[type="submit"]').textContent = 'Update Idea';
             document.getElementById('formTitle').textContent = 'Update Idea';
+            cancelEditBtn.style.display = 'inline-block';
         }
     }
 });
@@ -106,6 +108,7 @@ async function submitIdea(event) {
                 editIdeaId = null;
                 ideaForm.querySelector('button[type="submit"]').textContent = 'Save Idea';
                 document.getElementById('formTitle').textContent = 'Add a New Idea';
+                cancelEditBtn.style.display = 'none';
             } else {
                 throw new Error('Failed to update idea');
             }
@@ -141,6 +144,16 @@ async function submitIdea(event) {
 
 // Event Listeners
 ideaForm.addEventListener('submit', submitIdea);
+
+// Add cancel button handler
+cancelEditBtn.onclick = function() {
+    ideaForm.reset();
+    editMode = false;
+    editIdeaId = null;
+    ideaForm.querySelector('button[type="submit"]').textContent = 'Save Idea';
+    document.getElementById('formTitle').textContent = 'Add a New Idea';
+    cancelEditBtn.style.display = 'none';
+};
 
 // Initial load
 fetchIdeas(); 

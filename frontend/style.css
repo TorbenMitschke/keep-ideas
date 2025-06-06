@@ -1,10 +1,21 @@
 /* Custom styles for Idea Keeper */
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Fira Mono', 'JetBrains Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
     background: #2a003f;
     color: #e6d6f7;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .navbar {
@@ -76,6 +87,24 @@ body {
 .btn-danger:hover, .btn-danger:focus {
     background: #d90429;
     color: #fff;
+}
+
+.btn-edit {
+    background: none;
+    border: none;
+    color: #7c1fff;
+    font-size: 1em;
+    padding: 0 0.5em;
+    margin-left: 2em;
+    text-decoration: underline transparent;
+    transition: text-decoration 0.2s, color 0.2s;
+    box-shadow: none;
+}
+.btn-edit:hover, .btn-edit:focus {
+    color: #ff3860;
+    text-decoration: underline #ff3860;
+    background: none;
+    outline: none;
 }
 
 .idea-item {
@@ -156,4 +185,22 @@ body {
 .btn-primary:hover {
     transform: translateY(-1px);
     box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.container > .card.mb-4,
+.container > .card:not(.mb-4) {
+    max-width: 700px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid #7c1fff;
+    box-sizing: border-box;
+}
+
+.card.mb-4 .form-control {
+    width: 100%;
+}
+
+.idea-item .d-flex > div:first-child {
+    flex: 1 1 auto;
 } 
